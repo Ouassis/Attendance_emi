@@ -64,6 +64,6 @@
         android:layout_weight="1"
         android:background="@color/white"
         android:divider="#673AB7"
-        android:dividerHeight="2dp" />
+        android:dividerHeight="6dp" />
 
 </RelativeLayout>

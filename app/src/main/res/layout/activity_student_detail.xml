@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".StudentDetailActivity">
+
+    <TextView
+        android:id="@+id/mat_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:text="Student Details"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name Of Student :"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:id="@+id/student_name"
+        android:layout_below="@+id/mat_title"
+        android:layout_margin="25dp"
+        android:textColor="@color/white"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subject :"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:id="@+id/subject_title"
+        android:layout_below="@+id/student_name"
+        android:layout_margin="25dp"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="State :"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:id="@+id/state_title"
+        android:layout_below="@+id/subject_title"
+        android:layout_margin="25dp"
+        android:textColor="@color/white"
+        />
+
+
+</RelativeLayout>
