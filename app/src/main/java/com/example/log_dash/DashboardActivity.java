@@ -1,10 +1,12 @@
 package com.example.log_dash;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,6 +28,22 @@ public class DashboardActivity extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(),file,classes);
         listView.setAdapter(adapter);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Get the selected item text
+                String selectedItem = (String) parent.getItemAtPosition(position);
+
+                // Create an Intent to start the second activity
+                Intent intent = new Intent(DashboardActivity.this, StudentActivity.class);
+
+                // Add the selected item text as an extra to the Intent
+                intent.putExtra("SELECTED_ITEM", selectedItem);
+
+                // Start the new activity
+                startActivity(intent);
+            }
+        });
 
     }
 
