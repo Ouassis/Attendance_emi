@@ -29,10 +29,10 @@ public class LoginActivity extends AppCompatActivity {
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (username.getText().toString().equals("prof") && password.getText().toString().equals("admin")) {
+                if (username.getText().toString().equals("Prof") && password.getText().toString().equals("Admin")) {
                     //correct
                     Toast.makeText(LoginActivity.this, "LOGIN SUCCESSFUL", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(LoginActivity.this, DashboardActivity.class);
+                    Intent i = new Intent(LoginActivity.this, StudentsListActivity.class);
                     startActivity(i);
                 } else
                     //incorrect
