@@ -14,7 +14,7 @@ import com.google.zxing.common.BitMatrix;
 
 public class QRCodeActivity extends AppCompatActivity {
 
-    String data = "https://www.example.com";
+    String data = "https://www.attendanceemi.com";
     int width = 500;
     int height = 500;
 

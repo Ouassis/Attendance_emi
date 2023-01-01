@@ -36,6 +36,7 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".StudentActivity"/>
         <activity android:name=".QRCodeActivity"/>
+        <activity android:name=".ForgotPassActivity"/>
 
     </application>
 
