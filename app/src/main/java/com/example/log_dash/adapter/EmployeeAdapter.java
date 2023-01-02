@@ -1,5 +1,6 @@
 package com.example.log_dash.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,15 +8,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.log_dash.R;
-import com.example.modal.Employee;
+import com.example.modal.Subject;
 
 import java.util.List;
 
 public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeHolder> {
 
-    private List<Employee> employeeList;
+    private List<Subject> employeeList;
 
-    public EmployeeAdapter(List<Employee> employeeList) {
+    public EmployeeAdapter(List<Subject> employeeList) {
+
         this.employeeList = employeeList;
     }
 
@@ -29,10 +31,10 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull EmployeeHolder holder, int position) {
-        Employee employee = employeeList.get(position);
-        holder.name.setText(employee.getFirstName());
-        holder.location.setText(employee.getLastName());
-        holder.branch.setText(employee.getLastName());
+        Subject employee = employeeList.get(position);
+        holder.name.setText(employee.getId());
+        holder.location.setText(employee.getName());
+        holder.branch.setText(employee.getClasses().getName());
     }
 
     @Override

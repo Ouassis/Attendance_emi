@@ -1,6 +1,8 @@
 package com.example.modal;
 
-public class Teacher {
+import java.io.Serializable;
+
+public class Teacher implements Serializable {
     private String id;
     private String firstName;
     private String lastName;

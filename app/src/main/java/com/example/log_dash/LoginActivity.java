@@ -4,12 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.modal.Teacher;
+import com.example.retrofit.EmployeeAPI;
+import com.example.retrofit.RetrofitService;
 import com.google.android.material.button.MaterialButton;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -29,14 +40,28 @@ public class LoginActivity extends AppCompatActivity {
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (username.getText().toString().equals("Prof") && password.getText().toString().equals("Admin")) {
-                    //correct
-                    Toast.makeText(LoginActivity.this, "LOGIN SUCCESSFUL", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(LoginActivity.this, StudentsListActivity.class);
-                    startActivity(i);
-                } else
-                    //incorrect
-                    Toast.makeText(LoginActivity.this, "LOGIN FAILED !!!", Toast.LENGTH_SHORT).show();
+                RetrofitService retrofitService = new RetrofitService();
+                EmployeeAPI employeeApi = retrofitService.getRetrofit().create(EmployeeAPI.class);
+
+
+                employeeApi.login(username.getText().toString(),password.getText().toString())
+                        .enqueue(new Callback<Teacher>() {
+                            @Override
+                            public void onResponse(Call<Teacher> call, Response<Teacher> response) {
+                                Toast.makeText(LoginActivity.this, "LOGIN SUCCESSFUL", Toast.LENGTH_SHORT).show();
+                                Intent i = new Intent(LoginActivity.this, DashboardActivity.class);
+                                Log.d("tag", String.valueOf(response.body()));
+                                i.putExtra("TEACHER", response.body().getId());
+                                startActivity(i);
+                            }
+
+                            @Override
+                            public void onFailure(Call<Teacher> call, Throwable t) {
+                                Toast.makeText(LoginActivity.this, "Login failed!!!", Toast.LENGTH_SHORT).show();
+                                Logger.getLogger(LoginActivity.class.getName()).log(Level.SEVERE, "Error occurred", t);
+                            }
+                        });
+
             }
         });
 
