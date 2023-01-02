@@ -23,6 +23,7 @@ public class StudentsListActivity extends AppCompatActivity implements SelectLis
 
   private RecyclerView recyclerView;
   private String teacher ;
+  private List<Subject> employeeList ;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

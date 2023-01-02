@@ -18,7 +18,7 @@ public class StudentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_student);
 
         android.widget.ListView listView = (android.widget.ListView) findViewById(R.id.listview);
-        String[] classes = {"Abdessamad Elgarouate","Ezzerouali Mohammed","Chihab Makkodi"};
+        String[] classes = {"ELGAROUATE Abdessamad","EZ-ZAROUALY Mohammed","MAKKOUDI Chihab "};
         int file = androidx.appcompat.R.layout.support_simple_spinner_dropdown_item;
         ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(),file,classes);
         listView.setAdapter(adapter);

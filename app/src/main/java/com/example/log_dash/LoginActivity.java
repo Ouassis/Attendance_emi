@@ -43,6 +43,8 @@ public class LoginActivity extends AppCompatActivity {
                 RetrofitService retrofitService = new RetrofitService();
                 EmployeeAPI employeeApi = retrofitService.getRetrofit().create(EmployeeAPI.class);
 
+                Intent i = new Intent(LoginActivity.this, DashboardActivity.class);
+                startActivity(i);
 
                 employeeApi.login(username.getText().toString(),password.getText().toString())
                         .enqueue(new Callback<Teacher>() {

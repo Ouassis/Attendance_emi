@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name Of Student :"
+        android:text="ELGAROUATE Abdessamad"
         android:gravity="center"
         android:textSize="25dp"
         android:id="@+id/student_name"
@@ -34,7 +34,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Subject :"
+        android:text="Number of absences"
         android:gravity="center"
         android:textSize="25dp"
         android:id="@+id/subject_title"
@@ -44,16 +44,28 @@
         />
 
     <TextView
+        android:id="@+id/subject_absences"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="State :"
+        android:layout_below="@+id/student_name"
+        android:layout_marginTop="153dp"
+        android:layout_marginBottom="25dp"
         android:gravity="center"
-        android:textSize="25dp"
-        android:id="@+id/state_title"
-        android:layout_below="@+id/subject_title"
-        android:layout_margin="25dp"
+        android:text="2"
         android:textColor="@color/white"
-        />
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/state_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subject_title"
+        android:layout_marginTop="167dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:text="Present"
+        android:textColor="@color/white"
+        android:textSize="25dp" />
 
 
 </RelativeLayout>
